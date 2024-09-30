@@ -302,5 +302,13 @@
                 </controls:SettingsCard>
             </controls:SettingsExpander.Items>
         </controls:SettingsExpander>
+
+        <controls:SettingsCard Header="禁用视频流加载"
+                               Description="仅播放音频以减少流量消耗">
+            <controls:SettingsCard.HeaderIcon>
+                <font:FontAwesome Icon="Solid_VideoSlash"></font:FontAwesome>
+            </controls:SettingsCard.HeaderIcon>
+            <ToggleSwitch x:Name="swDisableVideoStream"></ToggleSwitch>
+        </controls:SettingsCard>
     </StackPanel>
 </UserControl>

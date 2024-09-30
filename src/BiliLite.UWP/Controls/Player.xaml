@@ -16,5 +16,6 @@
         <!--音视频分离-->
         <MediaPlayerElement x:Name="mediaPlayerAudio"  Visibility="Collapsed"></MediaPlayerElement>
         <!--<vlc:VideoView x:Name="vlcVideoView" Initialized="vlcVideoView_Initialized"></vlc:VideoView>-->
+        <Button x:Name="btnDisableVideoStream" Content="Disable Video Stream" Click="BtnDisableVideoStream_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
     </Grid>
 </UserControl>

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using BiliLite.ViewModels.Common;
 using Flurl.Http;
+using BiliLite.Services;
 
 namespace BiliLite.ViewModels.Settings
 {
@@ -26,6 +27,12 @@ namespace BiliLite.ViewModels.Settings
         }
 
         public List<CDNServerItemViewModel> CDNServers { get; set; }
+
+        public bool DisableVideoStream
+        {
+            get => SettingService.GetValue<bool>(SettingConstants.Player.DISABLE_VIDEO_STREAM, false);
+            set => SettingService.SetValue(SettingConstants.Player.DISABLE_VIDEO_STREAM, value);
+        }
 
         /// <summary>
         /// CDN延迟测试

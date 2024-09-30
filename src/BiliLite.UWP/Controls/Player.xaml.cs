@@ -459,8 +459,8 @@ namespace BiliLite.Controls
                 {
                     return;
                 }
-                playFailedChangeEngineEventArgs.message = arg.ErrorMessage;
-                await OnPlayerMediaFailed(playFailedChangeEngineEventArgs);
+                playFailedChangeEngineArgs.message = arg.ErrorMessage;
+                await OnPlayerMediaFailed(playFailedChangeEngineArgs);
             };
             //缓冲开始
             m_playerVideo.PlaybackSession.BufferingStarted += async (e, arg) =>
@@ -482,6 +482,21 @@ namespace BiliLite.Controls
             {
                 await OnPlayerPositionChanged(e);
             };
+        }
+
+        private void BtnDisableVideoStream_Click(object sender, RoutedEventArgs e)
+        {
+            DisableVideoStream();
+        }
+
+        private void DisableVideoStream()
+        {
+            if (m_playerVideo != null)
+            {
+                m_playerVideo.Source = null;
+                m_playerVideo.Dispose();
+                m_playerVideo = null;
+            }
         }
 
         #endregion
